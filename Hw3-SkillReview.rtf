@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red106\green62\blue62;\red63\green127\blue95;
+\red127\green159\blue191;\red0\green0\blue192;\red42\green0\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs22 \cf2 import\cf0  java.util.Scanner;\
+\cf2 public\cf0  \cf2 class\cf0  HW3_1 \{\
+	\cf2 public\cf0  \cf2 static\cf0  \cf2 void\cf0  main(String[] \cf3 args\cf0 )\{\
+		\cf4 // \cf5 TODO\cf4  Auto-generated method stub\cf0 \
+		\
+		Scanner \cf3 \ul \ulc3 keyboard\cf0 \ulnone  = \cf2 new\cf0  Scanner(System.\cf6 in\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "This program takes in numbers then produces the sum, product, average, max, min, and total numbers entered out."\cf0 );\
+		\
+		System.\cf6 out\cf0 .println(\cf7 "Enter number: "\cf0 ); \cf4 //*0 - 100\cf0 \
+		\
+		\cf2 double\cf0  \cf3 sum\cf0  = 0, \cf3 max\cf0  = -99999999, \cf3 min\cf0  = 999999999, \cf3 total\cf0  = 0, \cf3 product\cf0  = 1;\
+		\cf2 double\cf0  \cf3 average\cf0  = 0;\
+		\cf2 double\cf0  \cf3 input\cf0  = \cf3 keyboard\cf0 .nextDouble();\
+			\cf2 do\cf0  \{	\
+				\cf3 total\cf0 ++;\
+				\cf3 sum\cf0  = \cf3 sum\cf0  + \cf3 input\cf0 ;\
+			\
+				\cf2 boolean\cf0  \cf3 byFive\cf0  = \cf3 input\cf0 %5 <= 0;\
+				\cf2 if\cf0  (\cf3 byFive\cf0 )\
+					System.\cf6 out\cf0 .println(\cf3 input\cf0  + \cf7 " is divisible by five."\cf0 );\
+				;\
+				\cf3 product\cf0  = \cf3 product\cf0  * \cf3 input\cf0 ;\
+				\cf3 average\cf0  = \cf3 sum\cf0 /\cf3 total\cf0 ;\
+				\cf2 if\cf0  (\cf3 input\cf0  > \cf3 max\cf0 ) \{\
+					\cf3 max\cf0  = \cf3 input\cf0 ;\
+				\}\
+				\cf2 if\cf0  ((\cf3 input\cf0  < \cf3 min\cf0 )&&(\cf3 input\cf0  >= 0))\{\
+					\cf3 min\cf0  = \cf3 input\cf0 ;\
+				\}\
+				System.\cf6 out\cf0 .println(\cf7 "Enter number: "\cf0 );\
+				\cf3 input\cf0  = \cf3 keyboard\cf0 .nextInt();\
+			\
+			\
+			\}\cf2 while\cf0  (\cf3 input\cf0  >= 0);\
+		\
+		System.\cf6 out\cf0 .println(\cf7 "The total numbers input: "\cf0  + \cf3 total\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "The sum of all numbers: "\cf0  + \cf3 sum\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "The average of all numbers: "\cf0  + \cf3 average\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "The maximum of all numbers: "\cf0  + \cf3 max\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "The minimum of all numbers: "\cf0 + \cf3 min\cf0 );\
+		System.\cf6 out\cf0 .println(\cf7 "The product of all numbers: "\cf0  + \cf3 product\cf0 );\
+	\
+	\}\
+\}}

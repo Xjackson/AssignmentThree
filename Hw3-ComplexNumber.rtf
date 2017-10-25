@@ -1,0 +1,144 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red0\green0\blue192;\red106\green62\blue62;
+\red42\green0\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs22 \cf2 import\cf0  java.util.Scanner;\
+\
+\cf2 public\cf0  \cf2 class\cf0  Complex \{\
+	\
+	\cf2 double\cf0  \cf3 real\cf0 , \cf3 imaginary\cf0 ;\
+	\
+	\cf2 public\cf0  Complex()\{\
+		\cf3 real\cf0  = 0;\
+		\cf3 imaginary\cf0  = 0;\
+	\}\
+	\cf2 public\cf0  Complex(\cf2 double\cf0  \cf4 realPart\cf0 )\{\
+		\cf3 real\cf0  = \cf4 realPart\cf0 ;\
+	\}	\
+	\cf2 public\cf0  Complex(\cf2 double\cf0  \cf4 a\cf0 , \cf2 double\cf0  \cf4 b\cf0 )\{\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+	\}	\
+	\cf2 public\cf0  \cf2 void\cf0  setReal(\cf2 double\cf0  \cf4 a\cf0 )\{\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 void\cf0  setImagine(\cf2 double\cf0  \cf4 b\cf0 )\{\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 void\cf0  set(\cf2 double\cf0  \cf4 a\cf0 , \cf2 double\cf0  \cf4 b\cf0 ) \{\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 double\cf0  getReal()\{\
+		\cf2 return\cf0  \cf3 real\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 double\cf0  getImagine()\{\
+		\cf2 return\cf0  \cf3 imaginary\cf0 ;\
+	\}\
+	\cf2 public\cf0  String toString()\{\
+		\cf2 return\cf0  (\cf3 real\cf0  + \cf5 " + "\cf0  + \cf3 imaginary\cf0  +\cf5 "i"\cf0 );\
+	\}\
+	\cf2 public\cf0  \cf2 boolean\cf0  equal(Complex \cf4 otherComplex\cf0 )\{\
+		\cf2 return\cf0  ((\cf3 real\cf0  == \cf4 otherComplex\cf0 .\cf3 real\cf0 )&&(\cf3 imaginary\cf0  == \cf4 otherComplex\cf0 .\cf3 imaginary\cf0 ));\
+	\}\
+	\cf2 public\cf0  \cf2 static\cf0  Complex add(Complex \cf4 object\cf0 , Complex \cf4 otherObject\cf0 )\{\
+		\cf2 double\cf0  \cf4 sumA\cf0  = (\cf4 object\cf0 .\cf3 real\cf0  + \cf4 otherObject\cf0 .\cf3 real\cf0 );\
+		\cf2 double\cf0  \cf4 sumB\cf0  = (\cf4 object\cf0 .\cf3 imaginary\cf0  + \cf4 otherObject\cf0 .\cf3 imaginary\cf0 );\
+		Complex \cf4 sum\cf0  = \cf2 new\cf0  Complex(\cf4 sumA\cf0 , \cf4 sumB\cf0 );\
+		\cf2 return\cf0  \cf4 sum\cf0 ;\
+	\}\
+	\cf2 public\cf0  Complex add(Complex \cf4 object\cf0 ) \{\
+			\cf3 real\cf0  = \cf2 this\cf0 .\cf3 real\cf0  + \cf4 object\cf0 .\cf3 real\cf0 ;\
+			\cf3 imaginary\cf0  = \cf2 this\cf0 .\cf3 imaginary\cf0  + \cf4 object\cf0 .\cf3 imaginary\cf0 ;\
+			\cf2 return\cf0  \cf2 new\cf0  Complex(\cf3 real\cf0 , \cf3 imaginary\cf0 );\
+	\}\
+	\cf2 public\cf0  \cf2 void\cf0  addition(Complex \cf4 object\cf0 ) \{\
+		\cf3 real\cf0  = \cf2 this\cf0 .\cf3 real\cf0  + \cf4 object\cf0 .\cf3 real\cf0 ;\
+		\cf3 imaginary\cf0  = \cf2 this\cf0 .\cf3 imaginary\cf0  + \cf4 object\cf0 .\cf3 imaginary\cf0 ;\
+				\
+	\}\
+	;\
+	\cf2 public\cf0  \cf2 static\cf0  Complex subtract(Complex \cf4 object\cf0 , Complex \cf4 otherObject\cf0 ) \{\
+		\cf2 double\cf0  \cf4 differenceA\cf0  = (\cf4 object\cf0 .\cf3 real\cf0  - \cf4 otherObject\cf0 .\cf3 real\cf0 );\
+		\cf2 double\cf0  \cf4 differenceB\cf0  = (\cf4 object\cf0 .\cf3 imaginary\cf0  - \cf4 otherObject\cf0 .\cf3 imaginary\cf0 );\
+		Complex \cf4 difference\cf0  = \cf2 new\cf0  Complex(\cf4 differenceA\cf0 , \cf4 differenceB\cf0 );\
+		\cf2 return\cf0  \cf4 difference\cf0 ;\
+	\}\
+	\cf2 public\cf0  Complex subtract(Complex \cf4 otherObject\cf0 ) \{\
+		\cf3 real\cf0  = \cf2 this\cf0 .\cf3 real\cf0  - \cf4 otherObject\cf0 .\cf3 real\cf0 ;\
+		\cf3 imaginary\cf0  = \cf2 this\cf0 .\cf3 imaginary\cf0  - \cf4 otherObject\cf0 .\cf3 imaginary\cf0 ;\
+		\cf2 return\cf0   \cf2 new\cf0  Complex(\cf3 real\cf0 , \cf3 imaginary\cf0 );\
+	\}\
+	\
+	\cf2 public\cf0  \cf2 void\cf0  subtraction(Complex \cf4 object\cf0 ) \{\
+		Double \cf4 a\cf0  = \cf2 this\cf0 .\cf3 real\cf0  - \cf4 object\cf0 .\cf3 real\cf0 ;\
+		Double \cf4 b\cf0  = \cf2 this\cf0 .\cf3 imaginary\cf0  - \cf4 object\cf0 .\cf3 imaginary\cf0 ;\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 static\cf0  Complex multiply(Complex \cf4 object\cf0 , Complex \cf4 otherObject\cf0 ) \{\
+		\cf2 double\cf0  \cf4 multiplyA\cf0  = ((\cf4 object\cf0 .\cf3 real\cf0  * \cf4 otherObject\cf0 .\cf3 real\cf0 ) - (\cf4 object\cf0 .\cf3 imaginary\cf0  * \cf4 otherObject\cf0 .\cf3 imaginary\cf0 ));\
+		\cf2 double\cf0  \cf4 multiplyB\cf0  = ((\cf4 object\cf0 .\cf3 real\cf0  * \cf4 otherObject\cf0 .\cf3 imaginary\cf0 ) + (\cf4 object\cf0 .\cf3 imaginary\cf0  * \cf4 otherObject\cf0 .\cf3 real\cf0 ));\
+		Complex \cf4 multiply\cf0  = \cf2 new\cf0  Complex(\cf4 multiplyA\cf0 , \cf4 multiplyB\cf0 );\
+		\cf2 return\cf0  \cf4 multiply\cf0 ;\
+	\}\
+	\cf2 public\cf0  Complex multiply(Complex \cf4 object\cf0 ) \{\
+		Double \cf4 a\cf0  = ((\cf3 real\cf0  * \cf4 object\cf0 .\cf3 real\cf0 ) - (\cf3 imaginary\cf0  * \cf4 object\cf0 .\cf3 imaginary\cf0 ));\
+		Double \cf4 b\cf0  = ((\cf3 real\cf0  * \cf4 object\cf0 .\cf3 imaginary\cf0 ) + (\cf3 imaginary\cf0  * \cf4 object\cf0 .\cf3 real\cf0 ));\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+		\cf2 return\cf0  \cf2 new\cf0  Complex(\cf3 real\cf0 , \cf3 imaginary\cf0 );\
+	\}\
+	\cf2 public\cf0  \cf2 void\cf0  multiplication(Complex \cf4 object\cf0 ) \{\
+		Double \cf4 a\cf0  = ((\cf2 this\cf0 .\cf3 real\cf0  * \cf4 object\cf0 .\cf3 real\cf0 ) - (\cf2 this\cf0 .\cf3 imaginary\cf0  * \cf4 object\cf0 .\cf3 imaginary\cf0 ));\
+		Double \cf4 b\cf0  = ((\cf2 this\cf0 .\cf3 real\cf0  * \cf4 object\cf0 .\cf3 imaginary\cf0 ) + (\cf2 this\cf0 .\cf3 imaginary\cf0  * \cf4 object\cf0 .\cf3 real\cf0 ));\
+		\cf3 real\cf0  = \cf4 a\cf0 ;\
+		\cf3 imaginary\cf0  = \cf4 b\cf0 ;\
+	\}\
+	\cf2 public\cf0  \cf2 static\cf0  \cf2 void\cf0  main(String[] \cf4 args\cf0 ) \{\
+		Scanner \cf4 \ul \ulc4 keyboard\cf0 \ulnone  = \cf2 new\cf0  Scanner(System.\cf3 in\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "This program takes in two numbers and outputs them as a complex number of the form: a + bi."\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Enter value for a: "\cf0 );\
+		\cf2 double\cf0  \cf4 a\cf0  = \cf4 keyboard\cf0 .nextDouble();\
+		System.\cf3 out\cf0 .println(\cf5 "Enter value for b: "\cf0 );\
+		\cf2 double\cf0  \cf4 b\cf0  = \cf4 keyboard\cf0 .nextDouble();\
+		Complex \cf4 c4\cf0  = \cf2 new\cf0  Complex(\cf4 a\cf0 , \cf4 b\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "You entered the complex number: "\cf0  + \cf4 c4\cf0 );\
+		System.\cf3 out\cf0 .println();\
+		Complex \cf4 c1\cf0  = \cf2 new\cf0  Complex(1, 2);\
+		Complex \cf4 c2\cf0  = \cf2 new\cf0  Complex(3, 4);\
+		Complex \cf4 c3\cf0  = \cf2 new\cf0  Complex(\cf4 c1\cf0 .\cf3 real\cf0 , \cf4 c1\cf0 .\cf3 imaginary\cf0 );\
+		\
+		System.\cf3 out\cf0 .println(\cf5 "Comparing two complex numbers: "\cf0  + \cf4 c3\cf0 .equal(\cf4 c2\cf0 ));\
+		System.\cf3 out\cf0 .println(\cf5 "Comparing two more complex numbers: "\cf0  + \cf4 c1\cf0 .equal(\cf4 c3\cf0 ));\
+		System.\cf3 out\cf0 .println(\cf5 "Adding two complex numbers: "\cf0  + Complex.add(\cf4 c1\cf0 , \cf4 c2\cf0 ));\
+		System.\cf3 out\cf0 .println(\cf5 "Subtracting two complex numbers: "\cf0  + Complex.subtract(\cf4 c1\cf0 , \cf4 c2\cf0 ));\
+		System.\cf3 out\cf0 .println(\cf5 "Multiplying two complex numbers: "\cf0  + Complex.multiply(\cf4 c1\cf0 , \cf4 c2\cf0 ));\
+		\
+		\
+		System.\cf3 out\cf0 .println();\
+		\cf4 c4\cf0 .addition(\cf4 c3\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Result after using addition method: "\cf0  + \cf4 c4\cf0 );\
+		\cf4 c4\cf0 .subtraction(\cf4 c1\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Result after using subtraction method: "\cf0  + \cf4 c4\cf0 );\
+		\cf4 c4\cf0 .multiplication(\cf4 c1\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Result after using multiplication method: "\cf0  + \cf4 c4\cf0 );\
+		System.\cf3 out\cf0 .println();\
+		\
+		Complex \cf4 c5\cf0  = \cf2 new\cf0  Complex(5, 2.5);\
+		Complex \cf4 c6\cf0  = \cf2 new\cf0  Complex(1, 1);\
+		\cf4 c5\cf0 .add(\cf4 c6\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Result after using add method: "\cf0  + \cf4 c5\cf0 );\
+		Complex \cf4 c7\cf0  = \cf2 new\cf0  Complex();\
+		\cf4 c7\cf0 .set(4, 1);\
+		\cf4 c7\cf0 .subtract(\cf4 c6\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Results after using subtract method: "\cf0  + \cf4 c7\cf0 );\
+		\cf4 c7\cf0 .setReal(0);\
+		\cf4 c7\cf0 .multiply(\cf4 c5\cf0 );\
+		System.\cf3 out\cf0 .println(\cf5 "Results after using multiply method: "\cf0  + \cf4 c7\cf0 );\
+	\}\
+\}}
