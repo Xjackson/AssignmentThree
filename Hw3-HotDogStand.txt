@@ -1,0 +1,56 @@
+public class HotDogStand {
+	int ID, hotDogsSold;
+	private static int totalHotDogs = 0;
+	
+	public HotDogStand(){
+		this.ID = 0;
+		this.hotDogsSold = 0;
+	}
+	public HotDogStand(int idNumber, int dogs){
+		this.ID = idNumber;
+		this.hotDogsSold = dogs;	
+	}
+	
+	public void justSold(){
+		hotDogsSold ++;
+		totalHotDogs ++;
+	}
+	public void justSold(int sold){
+		hotDogsSold = hotDogsSold + sold;
+		totalHotDogs = totalHotDogs + sold;
+	}
+	
+	public void setID(int idNumber){
+		this.ID = idNumber;
+	}
+
+	public int getDogsSold(){
+		return hotDogsSold;
+	}
+	
+	public static int getTotalSold(){
+		return totalHotDogs;
+	}
+	public String toString(){
+		return "Stand number " + this.ID + " has sold " + hotDogsSold + " hot dog(s).";
+	}
+	public static void main(String[] args) {
+		HotDogStand stand1 = new HotDogStand();
+		HotDogStand stand2 = new HotDogStand(1002, 0);
+		HotDogStand stand3 = new HotDogStand(1003, 0);
+		stand1.setID(1001);
+		stand1.justSold(); 
+		stand1.justSold(); 
+		stand2.justSold(); 
+		stand3.justSold(); 
+		stand2.justSold(6); 
+		System.out.println(stand1);
+		System.out.println(stand2);
+		System.out.println(stand3);
+		System.out.println("Total sold: " + HotDogStand.getTotalSold());
+		stand2.justSold(); 
+		System.out.println("Total sold: " + HotDogStand.getTotalSold());
+		
+	}
+
+}

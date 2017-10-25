@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class SmallestValue {
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner(System.in);
+		String input, Continue = null;
+		System.out.println("This program takes a list of integars and outputs the smallest value.");
+		Integer smallest = 9999999;
+		do {
+			System.out.println("Enter a list of numbers");
+			input = keyboard.nextLine();
+			StringTokenizer token = new StringTokenizer(input, ", ");
+			Integer x = 0;
+			while (token.hasMoreTokens()) {
+				x = Integer.parseInt(token.nextToken());
+				if (x<smallest)
+					smallest = x;
+				
+				}
+			System.out.println("List of numbers: " + input);
+			System.out.println("The smallest number from the list is: " + smallest);
+			System.out.println("Would you like to do it again?");
+			Continue = keyboard.nextLine();
+		
+		}while(Continue.equalsIgnoreCase("yes")||Continue.equalsIgnoreCase("y"));
+		
+		}
+	
+}

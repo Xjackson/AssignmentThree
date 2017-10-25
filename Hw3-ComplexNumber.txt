@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+public class Complex {
+	
+	double real, imaginary;
+	
+	public Complex(){
+		real = 0;
+		imaginary = 0;
+	}
+	public Complex(double realPart){
+		real = realPart;
+	}	
+	public Complex(double a, double b){
+		real = a;
+		imaginary = b;
+	}	
+	public void setReal(double a){
+		real = a;
+	}
+	public void setImagine(double b){
+		imaginary = b;
+	}
+	public void set(double a, double b) {
+		real = a;
+		imaginary = b;
+	}
+	public double getReal(){
+		return real;
+	}
+	public double getImagine(){
+		return imaginary;
+	}
+	public String toString(){
+		return (real + " + " + imaginary +"i");
+	}
+	public boolean equal(Complex otherComplex){
+		return ((real == otherComplex.real)&&(imaginary == otherComplex.imaginary));
+	}
+	public static Complex add(Complex object, Complex otherObject){
+		double sumA = (object.real + otherObject.real);
+		double sumB = (object.imaginary + otherObject.imaginary);
+		Complex sum = new Complex(sumA, sumB);
+		return sum;
+	}
+	public Complex add(Complex object) {
+			real = this.real + object.real;
+			imaginary = this.imaginary + object.imaginary;
+			return new Complex(real, imaginary);
+	}
+	public void addition(Complex object) {
+		real = this.real + object.real;
+		imaginary = this.imaginary + object.imaginary;
+				
+	}
+	;
+	public static Complex subtract(Complex object, Complex otherObject) {
+		double differenceA = (object.real - otherObject.real);
+		double differenceB = (object.imaginary - otherObject.imaginary);
+		Complex difference = new Complex(differenceA, differenceB);
+		return difference;
+	}
+	public Complex subtract(Complex otherObject) {
+		real = this.real - otherObject.real;
+		imaginary = this.imaginary - otherObject.imaginary;
+		return  new Complex(real, imaginary);
+	}
+	
+	public void subtraction(Complex object) {
+		Double a = this.real - object.real;
+		Double b = this.imaginary - object.imaginary;
+		real = a;
+		imaginary = b;
+	}
+	public static Complex multiply(Complex object, Complex otherObject) {
+		double multiplyA = ((object.real * otherObject.real) - (object.imaginary * otherObject.imaginary));
+		double multiplyB = ((object.real * otherObject.imaginary) + (object.imaginary * otherObject.real));
+		Complex multiply = new Complex(multiplyA, multiplyB);
+		return multiply;
+	}
+	public Complex multiply(Complex object) {
+		Double a = ((real * object.real) - (imaginary * object.imaginary));
+		Double b = ((real * object.imaginary) + (imaginary * object.real));
+		real = a;
+		imaginary = b;
+		return new Complex(real, imaginary);
+	}
+	public void multiplication(Complex object) {
+		Double a = ((this.real * object.real) - (this.imaginary * object.imaginary));
+		Double b = ((this.real * object.imaginary) + (this.imaginary * object.real));
+		real = a;
+		imaginary = b;
+	}
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("This program takes in two numbers and outputs them as a complex number of the form: a + bi.");
+		System.out.println("Enter value for a: ");
+		double a = keyboard.nextDouble();
+		System.out.println("Enter value for b: ");
+		double b = keyboard.nextDouble();
+		Complex c4 = new Complex(a, b);
+		System.out.println("You entered the complex number: " + c4);
+		System.out.println();
+		Complex c1 = new Complex(1, 2);
+		Complex c2 = new Complex(3, 4);
+		Complex c3 = new Complex(c1.real, c1.imaginary);
+		
+		System.out.println("Comparing two complex numbers: " + c3.equal(c2));
+		System.out.println("Comparing two more complex numbers: " + c1.equal(c3));
+		System.out.println("Adding two complex numbers: " + Complex.add(c1, c2));
+		System.out.println("Subtracting two complex numbers: " + Complex.subtract(c1, c2));
+		System.out.println("Multiplying two complex numbers: " + Complex.multiply(c1, c2));
+		
+		
+		System.out.println();
+		c4.addition(c3);
+		System.out.println("Result after using addition method: " + c4);
+		c4.subtraction(c1);
+		System.out.println("Result after using subtraction method: " + c4);
+		c4.multiplication(c1);
+		System.out.println("Result after using multiplication method: " + c4);
+		System.out.println();
+		
+		Complex c5 = new Complex(5, 2.5);
+		Complex c6 = new Complex(1, 1);
+		c5.add(c6);
+		System.out.println("Result after using add method: " + c5);
+		Complex c7 = new Complex();
+		c7.set(4, 1);
+		c7.subtract(c6);
+		System.out.println("Results after using subtract method: " + c7);
+		c7.setReal(0);
+		c7.multiply(c5);
+		System.out.println("Results after using multiply method: " + c7);
+	}
+}

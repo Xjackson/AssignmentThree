@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class HW3_1 {
+	public static void main(String[] args){
+		// TODO Auto-generated method stub
+		
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("This program takes in numbers then produces the sum, product, average, max, min, and total numbers entered out.");
+		
+		System.out.println("Enter number: "); //*0 - 100
+		
+		double sum = 0, max = -99999999, min = 999999999, total = 0, product = 1;
+		double average = 0;
+		double input = keyboard.nextDouble();
+			do {	
+				total++;
+				sum = sum + input;
+			
+				boolean byFive = input%5 <= 0;
+				if (byFive)
+					System.out.println(input + " is divisible by five.");
+				;
+				product = product * input;
+				average = sum/total;
+				if (input > max) {
+					max = input;
+				}
+				if ((input < min)&&(input >= 0)){
+					min = input;
+				}
+				System.out.println("Enter number: ");
+				input = keyboard.nextInt();
+			
+			
+			}while (input >= 0);
+		
+		System.out.println("The total numbers input: " + total);
+		System.out.println("The sum of all numbers: " + sum);
+		System.out.println("The average of all numbers: " + average);
+		System.out.println("The maximum of all numbers: " + max);
+		System.out.println("The minimum of all numbers: "+ min);
+		System.out.println("The product of all numbers: " + product);
+	
+	}
+}
